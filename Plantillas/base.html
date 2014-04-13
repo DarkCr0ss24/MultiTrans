@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/style.css" %}" />
+	<title>{{titulo}}</title>
+	<meta charset="utf-8" /> 
+	{% block scripts %}{% endblock %}
+</head>
+<body>
+
+	<div id="contenido">
+	{% include "Includes/header.html" %}
+
+	{% include "Includes/aside.html" %}
+
+	{% block ContenidoPrincipal %}
+
+	<section id="ContenidoPrincipal">
+		
+		{% block contenido %}
+		{% endblock %}
+		
+	</section>
+	{%endblock%}
+
+
+	<div id="wrapper">
+	<div id="corte"></div>
+	</div>
+
+	{% include "Includes/footer.html" %}
+
+	</div>
+
+
+</body>
+</html>

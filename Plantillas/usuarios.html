@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block contenido %}
+
+{% for u in usuarios %}
+
+
+<article class="articuloUsuario">
+	{% if u.avatar %}
+		<div class="imagen">
+			<img src="../{{ u.avatar.name }}">
+		</div>
+	{% else %}
+		<div class="imagen">
+			<img src="{% static "Imagenes/default-avatar.png" %}">
+		</div>
+	{% endif %}
+	<div class="datos">
+		<h3>{{ u.nombre }}</h3>
+		<p>{{ u.correo }}</p>
+	</div>
+	<a href="#"><div class="boton">Visitar su perfil</div></a>
+		
+</article>
+
+{% endfor %}
+
+{% endblock %}

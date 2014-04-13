@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+		$(document).on("ready", function(){
+			
+			$("#barra .botones .boton").click(function(){
+
+				var tamaño = $("#barra").css("height");
+				if(tamaño !== "420px"){	
+					$("#barra").css("height",420);
+				} 
+				else{
+					$("#barra").css("height",60);
+				}
+			});
+
+			$("#cancelar").click(function(){
+				$("#barra").css("height",60);
+			});
+
+		});
+	</script>
+
+{% endblock %}
+
+{% block contenido %}
+
+	<div id="barra">
+		<section class="botones">
+			<div class="boton">Crear Nuevo Trabajo/Proyecto</div>
+		</section>
+		<form>
+			<input name="buscar" id="buscar" type="submit" value="Buscar" />
+			<input type="text" name="url" id="url" size="30" maxsize="255" value="Escribe lo que quieras buscar" onfocus="if(this.value == 'Escribe lo que quieras buscar') { this.value = ''; }" onblur="if(this.value == '') { this.value='Escribe lo que quieras buscar'}"/>
+		</form>
+		<div id="Nuevo">
+			<form>
+				<div id="campoIzquierdo">
+					<h3>Nombre:</h3>
+					<h3>Email:</h3>
+					<h3>Titulo:</h3>
+					<h3>Descripcion:</h3>
+				</div>
+				
+				<div id="campoDerecho">
+					<form>
+						<input type="text" name="nombre" id="nombre" maxsize="50"  />
+						<input type="email" name="email" id="email" />
+						<input type="text" name="titulo" id="titulo" maxsize="255" />
+						<textarea name="descripcion" id="descripcion"></textarea>
+					</form>
+				</div>
+			</form>			
+		</div>
+		<div id="botonera">
+			<div class="boton">Agregar</div>
+			<div class="boton" id="cancelar">Cancelar</div>
+		</div>
+	</div>
+
+{% for t in trabajos %}
+
+	<article class="articulo">
+		<hgroup>
+			<h1><a href="http://localhost:8000/trabajos/{{ t.titulo|join:"-" }}">{{ t.Titulo }}</a></h1>
+			<h5>
+			Cliente: {{ t.Autor }}
+			- Equipo: {{t.EquipoNecesario.all|join:", "}}
+			- Localización: {{ t.Localizacion }}
+			{% if t.NumeroDeUsuarios %}
+			- Operadores: {{ t.NumeroDeUsuarios }}
+			{% endif %}
+			</h5>
+		</hgroup>
+		{% if t.Imagen %}
+			<img src="../{{ t.Imagen.name }}">
+		{% else %}
+			<img src="http://trikinhuelas.com/wp-content/uploads/2007/05/albanil.jpg">
+		{% endif %}
+		<p>{{ t.Descripcion }}</p>
+	</article>
+{% endfor %}
+
+{% endblock %}

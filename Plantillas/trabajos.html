@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
 {% block scripts %}
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	{% load staticfiles %}
+	<script src="{% static "scripts/jquery-2.1.0.min.js" %}"></script>
 	<script>
 		$(document).on("ready", function(){
 			
 			$("#barra .botones .boton").click(function(){
 
 				var tamaño = $("#barra").css("height");
-				if(tamaño !== "420px"){	
-					$("#barra").css("height",420);
+				if(tamaño !== "460px"){	
+					$("#barra").css("height",460);
 				} 
 				else{
 					$("#barra").css("height",60);
@@ -44,12 +45,22 @@
 					<h3>Descripcion:</h3>
 				</div>
 				
-				<div id="campoDerecho">
+				<div id="campoCentro">
 					<form>
 						<input type="text" name="nombre" id="nombre" maxsize="50"  />
 						<input type="email" name="email" id="email" />
 						<input type="text" name="titulo" id="titulo" maxsize="255" />
 						<textarea name="descripcion" id="descripcion"></textarea>
+					</form>
+				</div>
+
+				<div id="campoDerecho">
+					<form>
+						<div id="NuevaImagen"></div>
+						<div id="subirImagen" class="boton">
+							Subir Imagen
+							<input type="file" value="Seleccione una imagen" accept="image/*" />
+						</div>
 					</form>
 				</div>
 			</form>			

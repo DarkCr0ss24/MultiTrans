@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="{% static "css/style.css" %}" />
 	<title>{{titulo}}</title>
 	<meta charset="utf-8" /> 
+	<script src="{% static "scripts/jquery-2.1.0.min.js" %}"></script>
+	<script>
+	$(document).on("ready",function(){
+		$("nav ul li").css("transition","all .5s ease-out");
+	});
+	</script>
 	{% block scripts %}{% endblock %}
 </head>
 <body>

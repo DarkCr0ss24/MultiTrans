@@ -30,7 +30,7 @@
 
 	<div id="barra">
 		<section class="botones">
-			<div class="boton">Crear Nuevo Trabajo</div>
+			<div class="boton">Crear Nuevo Proyecto</div>
 		</section>
 		<form>
 			<input name="buscar" id="buscar" type="submit" value="Buscar" />
@@ -74,7 +74,7 @@
 
 	<article class="articulo">
 		<hgroup>
-			<h1><a href="http://localhost:8000/trabajos/{{ t.titulo|join:"-" }}">{{ t.Titulo }}</a></h1>
+			<h1><a href="http://localhost:8000/proyectos/{{ t.titulo|join:"-" }}">{{ t.Titulo }}</a></h1>
 			<h5>
 			Cliente: {{ t.Autor }}
 			- Equipo: {{t.EquipoNecesario.all|join:", "}}

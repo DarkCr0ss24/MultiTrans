@@ -5,5 +5,13 @@
 		<a href="#"><p>Youtube</p></a>
 		<a href="#"><p>Google+</p></a>
 		<a href="#"><p>Twitter</p></a>
+		<p class="titulo">Ultimos Trabajos</p>
+		{% for t in UltimosTrabajos %}
+			<a href="http://localhost:8000/trabajos/{{ t.titulo|join:"-" }}"><p>{{ t.Titulo }}</p></a>
+		{% endfor %}
+		<p class="titulo">Ultimos Proyectos</p>
+		{% for p in UltimosProyectos %}
+			<a href="http://localhost:8000/proyectos/{{ p.titulo|join:"-" }}"><p>{{ p.Titulo }}</p></a>
+		{% endfor %}
 	</aside>
 </section>

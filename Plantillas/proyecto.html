@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block ContenidoPrincipal %}
+	{% block contenido %}
+		<section id="ContenidoPlano">
+			<hgroup>
+				<h1>{{ trabajo.Titulo }}</h1>
+				<h3>
+					<span class="datos">Cliente: {{ trabajo.Autor }}</span>
+					<span class="datos">Localización: {{ trabajo.Localizacion }}</span>
+					<span class="datos">Operadores: {{ trabajo.NumeroDeUsuarios }}</span>
+					<span class="datos">Equipo Necesario: {{trabajo.EquipoNecesario.all|join:", "}}</span>
+				</h3>
+				{% if trabajo.imagen %}
+					<img src="../{{ trabajo.imagen.name }}" />
+				{% else %}
+					<img src="http://trikinhuelas.com/wp-content/uploads/2007/05/albanil.jpg">
+				{% endif %}
+				<p>{{ trabajo.Descripcion }}</p>
+			</hgroup>
+			<div id="botonesTrabajo">
+				<div class="boton">Aceptar el Proyecto</div>
+				<div class="boton">Contactar con {{ trabajo.Autor }}</div>
+			</div>
+		</section>
+		
+	{% endblock %}
+{% endblock %}

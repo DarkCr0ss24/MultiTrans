@@ -410,6 +410,7 @@ section article
 	color: #F7F7F7;
 	font-family: caviar_dreamsbold;
 }
+
 #ContenidoPlano h3 .datos
 {
 	background-color: #C5AB9F;
@@ -583,8 +584,7 @@ section article
     height: 20px;
     margin-left: 0px;
     margin-top: 25px;
-    /*padding: 0;*/
-    /*background: url(https://lh6.googleusercontent.com/-dqTIJRTqEAQ/UJaofTQm3hI/AAAAAAAABHo/w7ruR1SOIsA/s157/upload.png);*/
+    background: url('../boton.png');
     overflow: hidden;
 }
 

@@ -19,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^proyectos/$', 'Trabajos.views.mostrarProyectos'),
     url(r'^usuarios/$', 'Usuarios.views.mostrarUsuarios'),
     url(r'^trabajos/(?P<titulo>[^/]+)/$', 'Trabajos.views.mostrarTrabajo'),
+    url(r'^proyectos/(?P<titulo>[^/]+)/$', 'Trabajos.views.mostrarProyecto'),
     url(r'^usuarios/(?P<nombre>[^/]+)/$', 'Usuarios.views.mostrarUsuario'),
 )

@@ -28,3 +28,7 @@ class Proyecto(models.Model):  # Modelo encargado de almacenar los diversos proy
 
 	def __str__(self):
 		return self.Titulo  # retorna el titulo del proyecto
+
+	def titulo(self):
+		x = self.Titulo.split()
+		return x

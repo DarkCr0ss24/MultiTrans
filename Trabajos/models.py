@@ -4,11 +4,12 @@ from Maquinas.models import Maquina
 
 # Create your models here.
 class TrabajoSencillo(models.Model):   # Modelo que se encarga de almacenar los Trabajos sencillos
-	Titulo = models.CharField(max_length = 50)   # Titulo del trabajo
+	Titulo = models.CharField(max_length = 50, null=True, blank=True)   # Titulo del trabajo
 	Autor = models.ForeignKey(Autor)   # Autor que hace la petecion de trabajo
 	Descripcion = models.TextField()   # descripcion del trabajo
 	EquipoNecesario = models.ManyToManyField(Maquina)   # Equipo necesario para llevar a cabo el trabajo
 	Localizacion = models.CharField(max_length = 50)   # Lugar donde se va a trabajar
+	Fecha = models.DateField(auto_now = True, null=True, blank=True)   # Fecha de la publicacion del trabajo
 
 	def __str__(self):
 		return self.Titulo   # retorna el titulo del trabajo
@@ -25,6 +26,7 @@ class Proyecto(models.Model):  # Modelo encargado de almacenar los diversos proy
 	EquipoNecesario = models.ManyToManyField(Maquina)   # Equipo necesario para realizar el proyecto
 	Localizacion = models.CharField(max_length = 50)   # lugar donde se va a trabajar
 	NumeroDeUsuarios = models.IntegerField()   # numero de usuarios necesarios para llevar a cabo el trabajo
+	Fecha = models.DateField(auto_now = True, null=True, blank=True)
 
 	def __str__(self):
 		return self.Titulo  # retorna el titulo del proyecto

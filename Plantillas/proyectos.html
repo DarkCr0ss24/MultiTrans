@@ -79,9 +79,7 @@
 			Cliente: {{ t.Autor }}
 			- Equipo: {{t.EquipoNecesario.all|join:", "}}
 			- Localización: {{ t.Localizacion }}
-			{% if t.NumeroDeUsuarios %}
 			- Operadores: {{ t.NumeroDeUsuarios }}
-			{% endif %}
 			</h5>
 		</hgroup>
 		{% if t.Imagen %}
@@ -90,6 +88,9 @@
 			<img src="http://trikinhuelas.com/wp-content/uploads/2007/05/albanil.jpg">
 		{% endif %}
 		<p>{{ t.Descripcion }}</p>
+		<h5 class="fecha">
+			{{ t.Fecha }}
+		</h5>
 	</article>
 {% endfor %}
 

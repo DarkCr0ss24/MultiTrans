@@ -727,3 +727,19 @@ section article
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+
+.fecha
+{
+	text-align: right;
+	margin: 0;
+}
+
+.tags
+{
+	margin: 0;
+}
+
+.tituloTrabajo
+{
+	margin: 15px;
+}

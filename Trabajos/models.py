@@ -25,8 +25,8 @@ class Proyecto(models.Model):  # Modelo encargado de almacenar los diversos proy
 	Descripcion = models.TextField()   # Descripcion del proyecto
 	EquipoNecesario = models.ManyToManyField(Maquina)   # Equipo necesario para realizar el proyecto
 	Localizacion = models.CharField(max_length = 50)   # lugar donde se va a trabajar
-	NumeroDeUsuarios = models.IntegerField()   # numero de usuarios necesarios para llevar a cabo el trabajo
-	Fecha = models.DateField(auto_now = True, null=True, blank=True)
+	NumeroDeUsuarios = models.IntegerField()   # numero de usuarios necesarios para llevar a cabo el proyecto
+	Fecha = models.DateField(auto_now = True, null=True, blank=True)   # Fecha de la publicacion del proyecto
 
 	def __str__(self):
 		return self.Titulo  # retorna el titulo del proyecto

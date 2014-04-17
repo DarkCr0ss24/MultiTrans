@@ -87,11 +87,11 @@
 			<img src="http://trikinhuelas.com/wp-content/uploads/2007/05/albanil.jpg">
 		{% endif %}
 		<p>{{ t.Descripcion }}</p>
-		{% if t.Fecha %}
-			<h5 class="fecha">
-				{{ t.Fecha }}
-			</h5>
-		{% endif %}
+
+		<h5 class="fecha">
+			Publicado el {{ t.Fecha }}
+		</h5>
+
 	</article>
 {% endfor %}
 

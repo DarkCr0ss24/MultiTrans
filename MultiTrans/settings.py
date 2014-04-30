@@ -89,7 +89,8 @@ USE_TZ = True
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    '/home/dark/Documentos/Django/MultiTrans/static',
+    #'/home/dark/Documentos/Django/MultiTrans/static',
+    BASE_DIR + '/static',
     )
 
 
